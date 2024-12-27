@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game Development Course</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Raleway:wght@400;900&display=swap"
+    rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      font-family: Poppins, sans-serif;
+    }
+
+    nav {
+      text-align: center;
+      width: 70%;
+      margin: 15px 100px;
+      padding: 8px 50px;
+      background-color: rgba(9, 75, 108, 0.29);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-radius: 50px;
+      position: fixed;
+      z-index: 1;
+    }
+
+    input[type="checkbox"] {
+      display: none;
+    }
+
+    .logo {
+      color: white;
+      font-size: 30px;
+      font-family: Raleway, sans-serif;
+      font-weight: 900;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .nav-link {
+      color: white;
+      font-size: 16px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .menu {
+      display: none;
+    }
+
+    .enrol-button {
+      background-color: #023047;
+      color: #fff;
+      padding: 10px 22px;
+      border-radius: 24px;
+      text-align: center;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .section1 {
+      height: 840px;
+      display: flex;
+      justify-content: space-between;
+      background: linear-gradient(180deg, #6F7DFB 0%, #26308C 100%);
+      overflow: hidden;
+    }
+
+    .left {
+      width: 50%;
+      padding: 100px;
+      padding-top: 160px;
+      animation: slideInLeft 1.5s ease-out;
+    }
+
+    .LearnTheArtOfGameDev {
+
+      color: white;
+      font-size: 50px;
+      font-family: Raleway, sans-serif;
+      font-weight: 900;
+      line-height: 1.25;
+    }
+
+    .description {
+      color: white;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 32px;
+      margin-top: 50px;
+    }
+
+    .enrolnow {
+      margin-top: 20px;
+      background-color: #DA722C;
+      color: white;
+      width: 150px;
+      height: 45px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 24px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-50px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .right {
+      width: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      animation: slideInRight 1s ease-out;
+    }
+
+    .right img {
+      width: 130%;
+      max-width: 446px;
+      height: auto;
+      animation: scaleUp 1.5s ease-out;
+    }
+
+    @keyframes slideInRight {
+      from {
+        opacity: 0;
+        transform: translateX(50px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes scaleUp {
+      from {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .Achievements,
+    .rating {
+      width: 190px;
+      height: 80px;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 12px;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      font-family: Poppins, sans-serif;
+      animation: fadeIn 4s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    .Achievements {
+      transform: translate(150%, 670%);
+    }
+
+    .rating {
+      transform: translate(50%, 790%);
+    }
+
+
+    .Achievements p,
+    .rating p {
+      margin: 0;
+      padding: 0;
+    }
+
+    .Achievements .K,
+    .rating .k {
+      color: #023047;
+      font-size: 30px;
+      font-weight: 700;
+    }
+
+
+    .StudentsEnrolled,
+    .rating span {
+      color: #023047;
+      font-size: 16px;
+      font-weight: 400;
+    }
+
+    .rating img {
+      width: 20px;
+      height: auto;
+      margin-left: 5px;
+    }
+
+
+
+
+    .section2 {
+      height: 785px;
+      display: flex;
+      background-color: #fff;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .section2 {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 5s, transform 5s;
+    }
+
+    .section2.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+
+    .left1 {
+      width: 50%;
+      height: 95%;
+
+    }
+
+    .right1 {
+      width: 50%;
+      height: 75%;
+      padding-top: 160px;
+      padding-left: 130px;
+      animation: slideInRight 1s ease-out;
+    }
+
+
+    .card1,
+    .card2 {
+      width: 442px;
+      height: 180px;
+      background: white;
+      box-shadow: 0px 9px 36px rgba(0, 0, 0, 0.20);
+      border-radius: 24px;
+      flex-direction: column;
+      position: absolute;
+      z-index: 2;
+    }
+
+    .card1 {
+      transform: translate(70px, 140px);
+    }
+
+    .card2 {
+      transform: translate(90px, 380px);
+    }
+
+
+    .TestimonialContent,
+    .TestimonialContent1 {
+      align-self: stretch;
+      padding-left: 32px;
+      padding-right: 32px;
+      padding-top: 14px;
+      padding-bottom: 14px;
+      color: #fff;
+      border-radius: 24px;
+
+    }
+
+    .TestimonialContent {
+      background: #6F7DFB;
+    }
+
+    .TestimonialContent1 {
+      background: #DA722c;
+    }
+
+
+    .innercard2 {
+      display: flex;
+      align-items: center;
+      gap: 110px;
+
+    }
+
+    .TestimonialName {
+      padding: 25px;
+    }
+
+    .Ellipse1 {
+      width: 80px;
+      height: 80px;
+      border-radius: 9999px;
+    }
+
+    .bar {
+      width: 28px;
+      height: 546px;
+      background: #023047;
+      border-radius: 24px;
+      transform: translate(140px, 100px);
+      position: absolute;
+      z-index: 1;
+    }
+
+
+
+    .heading {
+      color: #023047;
+      font-size: 60px;
+      font-family: Raleway;
+      font-weight: 900;
+      line-height: 52px;
+      word-wrap: break-word
+    }
+
+    .StudentAccessDetails {
+      margin-top: 20px;
+      color: #023047;
+      font-size: 16px;
+      font-family: Poppins;
+      font-weight: 400;
+      line-height: 32px;
+      word-wrap: break-word
+    }
+
+    .section3 {
+      height: 785px;
+      background-image: url('Rectangle 9.svg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      display: flex;
+    }
+
+    .left2,
+    .right2 {
+      width: 50%;
+      margin-top: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    center {
+      text-align: center;
+      color: white;
+      font-size: 50px;
+      font-family: Raleway, sans-serif;
+      font-weight: 800;
+      line-height: 65px;
+      word-wrap: break-word;
+      position: absolute;
+      padding: 70px 40% 10px;
+    }
+
+    .course1,
+    .course2 {
+      width: 426px;
+      height: 408px;
+      background-color: #fff;
+      border-radius: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transition: all 2s;
+      transform-origin:left;
+    }
+
+    .course1:hover,
+    .course2:hover {
+      height: 556px;
+      display: flex;
+      align-items: center;
+      background-color: #c8d9e7;
+      z-index: 1;
+    }
+
+    .course1:hover .TitleAndDuration,
+    .course2:hover .TitleAndDuration {
+      display: block;
+      width: 250px;
+    }
+
+   /* .course1:hover .GameDesingEssentials,
+    .course2:hover .GameDesingEssentials1 {
+    }*/
+
+    .course1:hover .more-info,
+    .course2:hover .more-info {
+      display: contents;
+      color: #023047;
+      font-family: Raleway, sans-serif;
+      font-weight: 600;
+      line-height: 22px;
+      transition: all 3s;
+    }
+
+    .course1:hover .hrs,.course2:hover .hrs{
+      margin-right: 30px;
+    }
+   .course2:hover .GameDesingEssentials1 {
+      font-size: 25px;
+    }
+    .more-info {
+      display: none;
+      transition: all 3s;
+    }
+
+    .Rectangle7 {
+      margin-top: 20px;
+      width: 378px;
+      transition: all 3s;
+    }
+
+    .TitleAndDuration {
+      padding: 30px 0 0 40px;
+      transition: all 3s;
+    }
+
+    .GameDesingEssentials,
+    .GameDesingEssentials1 {
+      color: #023047;
+      font-family: Raleway, sans-serif;
+      font-weight: 700;
+      line-height: 40px;
+      word-wrap: break-word;
+      transition: all 3s;
+    }
+
+    .GameDesingEssentials {
+      font-size: 28px;
+    }
+
+    .GameDesingEssentials1 {
+      font-size: 18px;
+    }
+
+    .hrs {
+      display: flex;
+      align-items: center;
+      height: 25px;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .hrs1 {
+      color: #023047;
+      font-family: Raleway, sans-serif;
+      font-weight: 800;
+      /* Adjusted font weight */
+    }
+
+    .hsrenrolnow {
+      width: 90%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .section4 {
+      height: 600px;
+      background-color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .getourapp {
+      text-align: center;
+      color: #023047;
+      font-size: 60px;
+      font-family: Raleway;
+      font-weight: 900;
+      line-height: 72px;
+      word-wrap: break-word
+    }
+
+    .usesmartphones {
+      text-align: center;
+      color: #023047;
+      font-size: 16px;
+      font-family: Poppins;
+      font-weight: 400;
+      line-height: 32px;
+      word-wrap: break-word
+    }
+
+    .applink {
+      display: flex;
+      gap: 20px;
+
+    }
+
+    .appstore,
+    .googleplay {
+      display: flex;
+      align-items: center;
+      background-color: #000000;
+      color: #fff;
+      width: 310px;
+      height: 100px;
+      border-radius: 30px;
+    }
+
+    .innerappstore,
+    .innergoogleplay {
+      display: flex;
+      padding-left: 50px;
+      gap: 20px;
+    }
+
+    .appname {
+      text-align: center;
+      color: white;
+      font-size: 24px;
+      font-family: Poppins;
+      font-weight: 400;
+      line-height: 48px;
+      word-wrap: break-word
+    }
+
+    .getourapp,
+    .usesmartphones,
+    .applink {
+      padding: 20px 0px;
+    }
+
+    .section5 {
+      height: 500px;
+      background-color: #070917;
+      display: flex;
+      padding: 50px;
+    }
+
+    .quicklinks,
+    .Coures,
+    .Contactus {
+      width: 500px;
+    }
+
+    h5 {
+      color: #DA722C;
+      color: #DA722C;
+      font-size: 18px;
+      font-family: Poppins;
+      font-weight: 700;
+      line-height: 36px;
+      word-wrap: break-word
+    }
+
+    p {
+      color: #fff;
+    }
+
+    input {
+      width: 350px;
+      height: 100%;
+      border: none;
+      border-radius: 8px;
+      padding-left: 10px;
+      font-family: Poppins;
+      font-size: 16px;
+      line-height: 32px;
+      color: black;
+      padding: 5px;
+
+    }
+
+    button {
+      width: 100px;
+      height: 100%;
+      background: #023047;
+      border-radius: 8px;
+      border: none;
+      color: white;
+      font-family: Poppins;
+      font-size: 16px;
+      cursor: pointer;
+      padding: 3px;
+      margin-right: 5px;
+    }
+
+    form {
+      background: white;
+      border-radius: 8px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      margin-top: 10px;
+    }
+
+    .mail {
+      color: #fff;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        height: auto;
+        margin: 15px 0px;
+        margin-left: 30px;
+        width: 230px;
+        transition: height 0.5s ease;
+      }
+
+      .nav-links {
+        opacity: 0;
+        /* Initially invisible */
+        transform: translateY(-10px);
+        /* Positioned slightly upward */
+        transition: opacity 0.5s ease, transform 0.5s ease;
+        display: none;
+      }
+
+      .menu {
+        display: block;
+        cursor: pointer;
+
+      }
+
+      input[type="checkbox"] {
+        display: none;
+      }
+
+      input[type="checkbox"]:checked+.menu+.nav-links {
+        display: flex;
+        flex-direction: column;
+        opacity: 1;
+        /* Fully visible */
+        transform: translateY(0);
+      }
+
+      input[type="checkbox"]:checked+.menu {
+        margin-bottom: 20px;
+      }
+
+      input[type="checkbox"]:checked~.nav {
+        background-color: #a21111;
+      }
+
+      .hello {
+        text-align: center;
+      }
+
+
+      .section1 {
+        height: 775px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        background: linear-gradient(180deg, #6F7DFB 0%, #26308C 100%);
+      }
+
+      .left {
+        width: 80%;
+        padding-top: 70px;
+        padding-left: 50px;
+        padding-right: 50px;
+        padding-bottom: 0px;
+      }
+
+      .right {
+        padding-left: 250px;
+      }
+
+      .LearnTheArtOfGameDev {
+        color: white;
+        font-size: 25px;
+        font-family: Raleway, sans-serif;
+        font-weight: 900;
+        line-height: 1.25;
+      }
+
+      .description {
+        color: white;
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 32px;
+        margin-top: 20px;
+      }
+
+      .Achievements {
+        transform: translate(-45%, 525%);
+      }
+
+      .rating {
+        transform: translate(-45%, 665%);
+      }
+
+      .section2 {
+        height: 890px;
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        overflow: hidden;
+      }
+
+      .right1 {
+        width: 80%;
+        padding-top: 70px;
+        padding-left: 50px;
+        padding-right: 50px;
+        padding-bottom: 0px;
+      }
+
+      .card1,
+      .card2 {
+        width: 375px;
+
+      }
+
+      .card1 {
+        transform: translate(10px, 30px);
+      }
+
+      .card2 {
+        transform: translate(10px, 220px);
+      }
+
+      .AmazingWorkWellDone {
+
+        font-size: 15px
+      }
+
+      .TestimonialName {
+        font-size: 10px
+      }
+
+      .bar {
+        height: 426px;
+        transform: translate(90px, 0px)
+      }
+
+      .heading {
+        font-size: 30px;
+      }
+
+      .section3 {
+        height: 1150px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      center {
+        position: static;
+        font-size: 50px;
+        padding-left: 0%;
+        padding-right: 0%;
+      }
+
+      .course1,
+      .course2 {
+        width: 356px;
+        height: 348px;
+        display: flex;
+        padding: 0%;
+        flex-direction: column;
+        padding: 0px 10px;
+      }
+
+      .course2 {
+        height: 383px;
+      }
+
+      .hsrenrolnow {
+        justify-content: space-between;
+        align-items: center;
+      }
+
+
+      .course1:hover,
+      .course2:hover {
+        width: 356px;
+        height: 518px;
+      }
+
+      .Rectangle7 {
+        height: 175px;
+      }
+
+      .course1:hover .Rectangle7,
+      .course2:hover .Rectangle7 {
+        height: 175px;
+        padding: 0%;
+      }
+
+      .GameDesingEssentials,
+      .GameDesingEssentials1 {
+        font-size: 20px;
+        font-weight: 900;
+      }
+
+      .left2 {
+        width: 50%;
+        margin-top: 50px;
+      }
+
+      .right2 {
+        width: 50%;
+        margin-top: 50px;
+      }
+
+      /*.section4 {}*/
+
+      .getourapp {
+        font-size: 40px
+      }
+
+      .usesmartphones {
+        font-size: 14px;
+      }
+
+      .applink {
+        display: block;
+        margin-left: 45px;
+      }
+
+      .googleplay {
+        margin-top: 20px;
+      }
+
+      .section5 {
+
+        height: 700px;
+        display: block;
+      }
+
+      .quicklinks,
+      .Coures,
+      .Contactus {
+        width: 306px;
+        text-align: center;
+      }
+
+
+      form {
+        display: flex;
+        flex-direction: column;
+        background-color: #070917;
+        gap: 10px
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav class="nav">
+      <div class="logo">GD.</div>
+      <div class="hello">
+        <input type="checkbox" id="menu-toggle">
+        <label class="menu" for="menu-toggle">☰</label>
+        <div class="nav-links">
+          <a href="#section2" class="nav-link">About</a>
+          <a href="#" class="nav-link">Services</a>
+          <a href="#" class="nav-link">Our Work</a>
+          <div class="enrol-button">Enrol Now</div>
+        </div>
+      </div>
+    </nav>
+
+  </header>
+
+  <section class="section1" id="section1">
+    <div class="left">
+      <h1 class="LearnTheArtOfGameDev">Learn the art of Game<br> Dev</h1>
+      <p class="description">This is a comprehensive course on Game Development. You will learn everything from
+        generating an idea to publishing your games to different platforms.</p>
+      <div class="enrolnow">
+        <img src="PencilAlt.svg">
+        <p>Enrol now</p>
+      </div>
+    </div>
+    <div class="right">
+      <img src="hero-image 1.svg" alt="Hero Image">
+    </div>
+    <div class="Achievements">
+      <p class="K">32k</p>
+      <p class="StudentsEnrolled">Students Enrolled</p>
+    </div>
+    <div class="rating">
+      <p class="k">4.7<img src="emojione_star.svg" alt="Star"></p>
+      <span>Overall rating</span>
+    </div>
+  </section>
+
+  <section class="section2" id="section2">
+    <!-- Left Section -->
+    <div class="left1">
+      <div class="bar"></div>
+
+      <!-- Testimonial Card 1 -->
+      <div class="card1">
+        <div class="TestimonialContent">
+          <p class="AmazingWorkWellDone">
+            This is a great course. It helped me a lot.<br>Thank you :)
+          </p>
+        </div>
+        <div class="innercard2">
+          <div class="TestimonialName">
+            <div class="JaneCooper">Jane Cooper</div>
+            <div class="DeveloperSony">Developer, Sony</div>
+          </div>
+          <div class="TestimonialImage">
+            <img class="Ellipse1" src="Ellipse 1.svg" alt="Jane Cooper Image">
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonial Card 2 -->
+      <div class="card2">
+        <div class="TestimonialContent1">
+          <p class="AmazingWorkWellDone">Amazing Work! Well done!</p>
+        </div>
+        <div class="innercard2">
+          <div class="TestimonialName">
+            <div class="JaneCooper">Jane Jones</div>
+            <div class="DeveloperSony">Designer, Facebook</div>
+          </div>
+          <div class="TestimonialImage">
+            <img class="Ellipse1" src="Ellipse 2.svg" alt="Jane Jones Image">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Section -->
+    <div class="right1">
+      <div class="heading">What our students say</div>
+      <div class="StudentAccessDetails">
+        All students get access to all the videos and the source code of the projects.<br>
+        You will also have access to a private Discord channel where you can discuss your doubts.
+      </div>
+      <div class="enrolnow">
+        <p>Learn More</p>
+      </div>
+    </div>
+  </section>
+  <section class="section3">
+    <center>Our Courses</center>
+    <div class="left2">
+      <div class="course1">
+        <img class="Rectangle7" src="Rectangle 7.svg">
+        <div class="TitleAndDuration">
+          <div class="GameDesingEssentials">Game Design Essentials</div>
+          <div class="hsrenrolnow">
+            <div class="hrs"><img src="clocksvg.svg">
+              <p class="hrs1">8 HRS</p>
+            </div>
+            <div class="enrolnow">
+              <p>Enrol now</p>
+            </div>
+          </div>
+          <div class="more-info">
+            <p class="hrs1">Learn the fundamentals of game design, from concept creation to user engagement. This course
+              includes
+              hands-on projects and expert guidance.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="right2">
+      <div class="course2">
+        <img class="Rectangle7" src="Rectangle 7.1.svg">
+        <div class="TitleAndDuration">
+          <div class="GameDesingEssentials1">Unity Game Engine Fundamentals</div>
+          <div class="hsrenrolnow">
+            <div class="hrs"><img src="clocksvg.svg">
+              <p class="hrs1">8 HRS</p>
+            </div>
+            <div class="enrolnow">
+              <p>Enrol now</p>
+            </div>
+          </div>
+          <div class="more-info">
+            <p class="hrs1">Learn the fundamentals of game design, from concept creation to user engagement. This course
+              includes
+              hands-on projects and expert guidance.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section4">
+    <div class="Appsection">
+      <div class="getourapp">Get our App</div>
+      <div class="usesmartphones">You can use our App for better experience on smartphones</div>
+      <div class="applink">
+        <div class="appstore">
+          <div class="innerappstore"><img src="appstore.svg">
+            <p class="appname">App Store</p>
+          </div>
+        </div>
+        <div class="googleplay">
+          <div class="innergoogleplay"><img src="googleplay.svg">
+            <p class="appname">google Play
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section5">
+    <div class="quicklinks">
+      <h5>Quick Links</h5>
+      <p>
+        About Us<br><br>
+        Contact Us<br><br>
+        Privacy Policy<br><br>
+        Terms & Conditions<br>
+      </p>
+    </div>
+    <div class="Coures">
+      <h5>Coures</h5>
+      <p>
+        Log in<br><br>
+        Download<br><br>
+        All Courses<br>
+      </p>
+    </div>
+
+    <div class="Contactus">
+      <h5>Contact Us</h5>
+      <p class="mail">contact@gmail.com</p>
+      <div class="image"><img src="facebook.svg"><img src="instrgram.svg"></div>
+      <form action="">
+        <input class="email-input" type="email" placeholder="Email Address">
+        <button class="submit-button">Submit</button>
+      </form>
+    </div>
+  </section>
+  <script>
+    // Get the section to animate
+    const section2 = document.querySelector('.section2');
+
+    window.addEventListener('scroll', function () {
+      if (section2.getBoundingClientRect().top < window.innerHeight) {
+        section2.classList.add('visible');
+      }
+    });
+  </script>
+
+</body>
+
+</html>
